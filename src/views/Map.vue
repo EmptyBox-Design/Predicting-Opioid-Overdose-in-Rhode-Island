@@ -135,8 +135,9 @@ export default {
         'type': 'fill',
         'source': 'census-block-source-data',
         'paint': {
-          'fill-color': '#3ad3ad',
-          'fill-outline-color': '#fdfdfd'
+          'fill-color': '#fdfdfd',
+          'fill-outline-color': '#333333',
+          'fill-opacity': 0.75
         }
       })
     },
@@ -144,7 +145,15 @@ export default {
      * Update model on input change
      */
     updateModel (model) {
-      console.log('- model', model)
+      let paint = '#fdfdfd'
+
+      if (model !== null) {
+        paint = ['match', ['get', model], 0, '#fdfdfd', 1, '#3ad3ad', '#333333']
+      }
+      map.setPaintProperty(
+        'census-block-polygons',
+        'fill-color', paint
+      )
     }
   }
 }
