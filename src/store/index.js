@@ -21,7 +21,7 @@ export default new Vuex.Store({
   },
   actions: {
     readCBGs (context) {
-      json('./rhode_island_cbgs_v2.geojson', () => {}).then((response) => {
+      json('./rhode_island_cbgs_v3.geojson', () => {}).then((response) => {
         context.commit('setCensusBlocks', response)
       })
     }
