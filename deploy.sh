@@ -8,7 +8,7 @@ cd dist
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
 git init
-git add -A
+git add -A -f
 git commit -m 'deploy'
 git push -f git@github.com:Emptybox-Design/Predicting-Opioid-Overdose-in-Rhode-Island.git master:gh-pages
 cd -
