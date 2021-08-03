@@ -97,25 +97,25 @@ export default {
           accuracy: ''
         },
         {
-          value: 'GP',
+          value: 'GP_LC20',
           name: 'Guassian Process',
           description: "The <a href='https://scikit-learn.org/stable/modules/gaussian_process.html' target='blank'>Gaussian Process</a> (GP) method has good prospects for spatio-temporal prediction by multiplying kernels. The best GP model uses features selected by Recursive Feature Elimination, distance-weighted spatial aggregates of those features, and each Census Block Group’s centroid coordinates, in total 140 features. It captures 40.5% drug overdose deaths in the period of 2020.1 (see Evaluation Criteria for information).",
           accuracy: '40.1'
         },
         {
-          value: 'GCN',
+          value: 'GCN_LC20',
           name: 'Graph Covulution Network',
           description: 'The Graph Convolutional Network (GCN) method is good at capturing spatio-temporal relationships when a large amount of data and steps are available. The best GCN model uses features of the previous period, plus distance-weighted spatial aggregates of those features, in total 291 features. It captures 37.4% of drug overdose deaths in the period of 2020.1 (see Evaluation Criteria for detailed information).',
           accuracy: '37.4'
         },
         {
-          value: 'RF',
+          value: 'RF_LC20',
           name: 'Random Forest',
           description: "The <a href='https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html' target='blank'>Random Forest</a> RF) method has good accuracy and some interoperability to help characterize the model’s logic via feature importance's. The best RF model uses 25 top important features from the previous two periods. It on average captures 40.2% drug overdose deaths in the periods of 2019.2 and 2020.1 (see Evaluation Criteria for detailed information).",
           accuracy: '40.2'
         },
         {
-          value: 'GB',
+          value: 'GB_LC20',
           name: 'Gradient Boost',
           description: "The <a href='https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_regression.html' target='blank'>XGBoost</a> (XGB) method is highly efficient and accurate because of parallel tree boosting. The best XGB model incorporates 16 principal components extracted from an original set of 143 features, using an 8-degree poly kernel. It captures 40.1% drug overdose deaths in the period of 2020.1 (see Evaluation Criteria for detailed information).",
           accuracy: '40.1'
