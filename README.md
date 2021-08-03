@@ -60,9 +60,6 @@ The [Random Forest](https://scikit-learn.org/stable/modules/generated/sklearn.en
 ### Graph Convolutional Network
 
 The Graph Convolutional Network (GCN) method is good at capturing spatio-temporal relationships when a large amount of data and steps are available. The best GCN model uses features of the previous period, plus distance-weighted spatial aggregates of those features, in total 291 features. It captures 37.4% of drug overdose deaths in the period of 2020.1 (see Evaluation Criteria for detailed information). 
-## Acknowledgement
-
-We would like to thank our project sponsors, [Dr. Daniel Neill](https://cs.nyu.edu/~neill/), [Dr. Magdalena Cerda](https://med.nyu.edu/faculty/magdalena-cerda), and Bennett Allen for their advising, the Brown University team for their help with technical issues and dataset preparation, the University of California, Berkeley team for sharing their insights and CUSP instruction team for capstone guidance.
 
 ## Results and Implications
 
