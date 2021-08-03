@@ -105,7 +105,7 @@ export default {
         {
           value: 'GCN',
           name: 'Graph Covulution Network',
-          description: '',
+          description: 'The Graph Convolutional Network (GCN) method is good at capturing spatio-temporal relationships when a large amount of data and steps are available. The best GCN model uses features of the previous period, plus distance-weighted spatial aggregates of those features, in total 291 features. It captures 37.4% of drug overdose deaths in the period of 2020.1 (see Evaluation Criteria for detailed information).',
           accuracy: '37.4'
         },
         {
