@@ -1,4 +1,6 @@
 # Predicting Opioid Overdose in Rhode Island
+
+[Interactive-Visualization](https://emptybox-design.github.io/Predicting-Opioid-Overdose-in-Rhode-Island/)
 ## Abstract
 
 The opioid epidemic is one of the largest public health crises in the United States; since 1999, over 814,000 people have died from a drug overdose in the US. Rhode Island has been hit particularly hard and regularly has some of the country's highest overdose death rates. To improve forward-looking targeting of intervention efforts they seek to utilize a prediction model of areas of the state at higher risk of an overdose outbreak. As a subset of a larger team working on this effort, we developed four models to predict overdose risk at the census block group level utilizing the following algorithms: [gaussian processes](https://scikit-learn.org/stable/modules/gaussian_process.html), [random forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html), [gradient boost](https://xgboost.readthedocs.io/en/latest/), and [graph convolutional network](https://arxiv.org/pdf/1812.08434.pdf). The first three of these achieved the project’s baseline performance target and the graph convolutional network we believe shows promise. Our model results will be folded into the larger project and this information will then be supplied to RIDOH and community organizations to deploy targeted resources to higher-risk areas. If this method proves successful, it could serve as a model for states and municipalities across the country to identify and target interventions to reduce overdose risk.
@@ -80,9 +82,14 @@ Jiaqi is a Senior Graduate Research at the NYU Furman Center of Real Estate and 
 **Brandon Pachuca**
 
 Brandon is an Urban Data Analyst at KPF on the KPFui team. He has a background in architecture + urban planning and has worked as a software developer creating innovative tools and workflows at the intersection of architecture and emergent technologies.
+
 Brandon is finishing his master's at NYU Center for Urban Data Science, focusing on how technology, AI, and policy fit together to tackle our communities' challenges.
 
 **Nicolas Liu-Sontag**
+
+Nicholas is a Sustainability Manager at New York University where he works on developing and implementing NYU’s sustainability strategies and programs. He utilizes his background in green building and energy engineering, in combination with data analysis, to identify areas for carbon and energy reduction.
+
+Nicholas is completing his master’s NYU’s Center for Urban Science and Progress focusing on how machine learning and data analysis can solve societal problems.
 
 **Yicong Wang**
 
@@ -91,24 +98,3 @@ Yicong completed his bachelor’s at UC San Diego majored in economics and math.
 ## Front-end Development Instructions
 
 The front-end is built using [Vue](https://cli.vuejs.org/) and [Mapbox](https://www.mapbox.com/).
-
-### Install Dependencies
-
-`npm install`
-
-### Local Server
-
-`npm run serve`
-
-### Deploy
-
-`sh deploy.sh`
-
-Runs the deploy script which
-
-- Runs build
-- Pushes to *gh-pages* branch
-
-[GitHub-Pages](https://emptybox-design.github.io/Predicting-Opioid-Overdose-in-Rhode-Island/)
-
-`git subtree push --prefix dist origin gh-pages`
