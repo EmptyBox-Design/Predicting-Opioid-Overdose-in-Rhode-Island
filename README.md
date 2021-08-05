@@ -1,6 +1,8 @@
 # Predicting Opioid Overdose in Rhode Island
 
-[Interactive-Visualization](https://emptybox-design.github.io/Predicting-Opioid-Overdose-in-Rhode-Island/)
+![map-image](https://github.com/EmptyBox-Design/Predicting-Opioid-Overdose-in-Rhode-Island/blob/master/src/assets/Capstone_workspace-06.png?raw=True)
+
+[Map Visualization](https://emptybox-design.github.io/Predicting-Opioid-Overdose-in-Rhode-Island/)
 ## Abstract
 
 The opioid epidemic is one of the largest public health crises in the United States; since 1999, over 814,000 people have died from a drug overdose in the US. Rhode Island has been hit particularly hard and regularly has some of the country's highest overdose death rates. To improve forward-looking targeting of intervention efforts they seek to utilize a prediction model of areas of the state at higher risk of an overdose outbreak. As a subset of a larger team working on this effort, we developed four models to predict overdose risk at the census block group level utilizing the following algorithms: [gaussian processes](https://scikit-learn.org/stable/modules/gaussian_process.html), [random forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html), [gradient boost](https://xgboost.readthedocs.io/en/latest/), and [graph convolutional network](https://arxiv.org/pdf/1812.08434.pdf). The first three of these achieved the project’s baseline performance target and the graph convolutional network we believe shows promise. Our model results will be folded into the larger project and this information will then be supplied to RIDOH and community organizations to deploy targeted resources to higher-risk areas. If this method proves successful, it could serve as a model for states and municipalities across the country to identify and target interventions to reduce overdose risk.
