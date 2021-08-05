@@ -1,6 +1,6 @@
 # Predicting Opioid Overdose in Rhode Island
 
-![map-image](https://github.com/EmptyBox-Design/Predicting-Opioid-Overdose-in-Rhode-Island/blob/master/src/assets/Capstone_workspace-06.png?raw=True)
+![map-gif](https://github.com/EmptyBox-Design/Predicting-Opioid-Overdose-in-Rhode-Island/blob/master/src/assets/capstone_map_results.gif?raw=True)
 
 [Map Visualization](https://emptybox-design.github.io/Predicting-Opioid-Overdose-in-Rhode-Island/)
 ## Abstract
@@ -31,6 +31,8 @@ We seek to prioritize opioid overdose outbreaks in advance using predictive mode
 The modeling effort of the [New York University Center for Urban Science and Progress](https://cusp.nyu.edu/) (NYU CUSP) capstone team is part of an NIH-funded project, deemed [PROVIDENT](https://preventoverdoseri.org/research/), RIDOH, in partnership with the Task Force and researchers from Brown University and New York University (NYU).
 
 As a subset of PROVIDENT, our goal is to predict opioid overdose risk in Rhode Island by CBG on a six-month rolling basis. We did a comparative analysis of ensemble, gaussian processes, and deep learning models evaluating the accuracy, interpretability, and computational effectiveness in predicting the rank of each CBG’s risk of overdoses. 
+
+![map-image](https://github.com/EmptyBox-Design/Predicting-Opioid-Overdose-in-Rhode-Island/blob/master/src/assets/Capstone_workspace-06.png?raw=True)
 
 ## Evaluation Criteria
 
