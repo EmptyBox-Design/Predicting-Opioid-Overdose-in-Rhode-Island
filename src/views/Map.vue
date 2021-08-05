@@ -9,20 +9,21 @@
 
         <div class="body-panel text-justify font-body">
           <p>
-            We seek to prioritize opioid overdose outbreaks in advance using predictive modeling to allocate resources amongst the state’s <a href="https://www.census.gov/programs-surveys/geography/about/glossary.html#par_textimage_4" target="blank">Census Block Groups (CBG)</a>. These models will predict the CBGs with the highest opioid fatality risk on a six-month rolling basis. This information will be distributed to <a href="https://health.ri.gov/" target="blank">Rhode Island Department of Health (RIDOH)</a> and community organizations to deploy targeted interventions to prevent overdoses.
+            This interactive map presents the results of models built during the 2021  <a href="https://cusp.nyu.edu/" target="_blank">NYU Center for Urban Science and Progress</a> <a href="https://cusp.nyu.edu/2021-capstones/" target="_blank">Capstone</a> as part of a joint study between New York University and Brown University. These models predict the <a href="https://www.census.gov/programs-surveys/geography/about/glossary.html#par_textimage_4" target="blank">Census Block Groups (CBG)</a> with the highest overdose fatality risk on a six-month rolling basis. This information will be distributed to <a href="https://health.ri.gov/" target="blank">Rhode Island Department of Health (RIDOH)</a> and community organizations to deploy targeted interventions to prevent opioid overdoses. These maps present the CBGs chosen by each model for targeting for the first half of 2020.
+          </p>
+          <p>
+            You can learn more about the project team <a href="https://github.com/EmptyBox-Design/Predicting-Opioid-Overdose-in-Rhode-Island#Team" target="blank">here</a>.
           </p>
         </div>
 
         <div class="navigation-panel mb-2">
           <b-button variant="info" @click="exploreMode = !exploreMode">
-            <span v-if="exploreMode">Methodolgy</span>
+            <span v-if="exploreMode">About</span>
             <span v-if="!exploreMode">Explore</span>
           </b-button>
         </div>
 
         <div class="spacer border-bottom mb-2"></div>
-
-        <!-- <transition name="slide-fade"> -->
 
         <div class="explore-panel" v-if="exploreMode">
 
@@ -49,29 +50,13 @@
               </div>
             </b-form-group>
           </div>
-
-          <div class="legend-panel">
-            <h4>Census Block Group Legend</h4>
-            <div class="legend-container d-flex">
-              <div class="d-flex p-2 m-1">
-                <div class="legend-circle active-color mr-2"></div>
-                <div>Targetted</div>
-              </div>
-              <div class="d-flex p-2 m-1">
-                <div class="legend-circle mr-2"></div>
-                <div>Untargetted</div>
-              </div>
-            </div>
-          </div>
         </div>
-        <!-- </transition> -->
 
-        <!-- <transition name="slide-fade"> -->
-        <div class="methodology-panel font-body" v-if="!exploreMode">
+        <div class="methodology-panel font-body p-3 text-justify" v-if="!exploreMode">
 
           <h4>Abstract</h4>
           <p>
-            The opioid epidemic is one of the largest public health crises in the United States; since 1999, over 814,000 people have died from a drug overdose in the US. Rhode Island has been hit particularly hard and regularly has some of the country's highest overdose death rates. To improve forward-looking targeting of intervention efforts they seek to utilize a prediction model of areas of the state at higher risk of an overdose outbreak. As a subset of a larger team working on this effort, we developed four models to predict overdose risk at the census block group level utilizing the following algorithms: gaussian processes, random forest, gradient boost, and graph convolutional network. The first three of these achieved the project’s baseline performance target and the graph convolutional network we believe shows promise. Our model results will be folded into the larger project and this information will then be supplied to RIDOH and community organizations to deploy targeted resources to higher-risk areas. If this method proves successful, it could serve as a model for states and municipalities across the country to identify and target interventions to reduce overdose risk.
+            The opioid epidemic is one of the largest public health crises in the United States; since 1999, over 814,000 people have died from a drug overdose in the US. Rhode Island has been hit particularly hard and regularly has some of the country's highest overdose death rates. To improve forward-looking targeting of intervention efforts they seek to utilize a prediction model of areas of the state at higher risk of an overdose outbreak. As a subset of a larger team working on this effort, we developed four models to predict overdose risk at the census block group level utilizing the following algorithms: <a href="https://scikit-learn.org/stable/modules/gaussian_process.html" target="_blank">gaussian processes</a>, <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html" target="_blank">random forest</a>, <a href="https://xgboost.readthedocs.io/en/latest/" target="_blank">gradient boost</a>, and <a href="https://arxiv.org/pdf/1812.08434.pdf" target="_blank">graph convolutional network</a>. The first three of these achieved the project’s baseline performance target and the graph convolutional network we believe shows promise. Our model results will be folded into the larger project and this information will then be supplied to RIDOH and community organizations to deploy targeted resources to higher-risk areas. If this method proves successful, it could serve as a model for states and municipalities across the country to identify and target interventions to reduce overdose risk.
           </p>
 
           <h4>Problem Definition</h4>
@@ -79,23 +64,23 @@
             Opioid-related deaths have severely increased over years in the United States: annual death involving opioids have increased by four times since 2000 (National Institute on Drug Abuse, 2020). The crisis is a public health emergency; datasets to characterize the problem are only recently beginning to show value as predictors of community risk. Our literature review found health experts using various indicators to predict fatal opioid overdose events (OOEs) or deaths such as; emergency service room visits, census tract-level demographic analyses, patient medical histories, internet search terms, and prescription drug monitoring programs. The novel process of using high-resolution spatial and temporal municipal datasets has just recently been explored to predict opioid overdose events for targeted health and policy interventions in communities.
           </p>
 
-          <h4>Problem statement</h4>
+          <h4>Problem Statement</h4>
           <p>
             In 2020, Rhode Island recorded over 350 opioid-related deaths, and the state has regularly shown some of the highest overdose death rates per capita in the country. In 2015, the Governor created the Overdose Prevention and Intervention Task Force and set a target of reducing opioid overdose deaths by one-third within three years. The Task Force has identified a four-pronged approach to addressing the epidemic:
           </p>
 
-          <p>
-            Treatment: Increase the number of people receiving medication-assisted treatment for Opioids.
-          </p>
           <ul>
             <li>
-              Rescue: Increase the number of naloxone kits distributed across the state
+              <strong>Treatment</strong>: Increase the number of people receiving medication-assisted treatment for Opioids.
             </li>
             <li>
-              Prevention: Decrease the number of people receiving opioid & benzodiazepine subscriptions every year
+              <strong>Rescue</strong>: Increase the number of naloxone kits distributed across the state
             </li>
             <li>
-              Recovery: Increase the number of peer recovery coaches and contacts
+              <strong>Prevention</strong>: Decrease the number of people receiving opioid & benzodiazepine subscriptions every year
+            </li>
+            <li>
+              <strong>Recovery</strong>: Increase the number of peer recovery coaches and contacts
             </li>
 
           </ul>
@@ -107,10 +92,10 @@
 
           <h4>Solution</h4>
           <p>
-            We seek to prioritize opioid overdose outbreaks in advance using predictive modeling to allocate resources amongst the state’s Census Block Groups (CBG). These models will predict the CBGs with the highest opioid fatality risk on a six-month rolling basis. This information will be distributed to Rhode Island Department of Health (RIDOH) and community organizations to deploy targeted interventions to prevent overdoses. Community organizations will have the power to choose what type of intervention, such as street outreach and educational workshops, is suitable in the local neighborhood.
+            We seek to prioritize opioid overdose outbreaks in advance using predictive modeling to allocate resources amongst the state’s <a href="https://www.census.gov/programs-surveys/geography/about/glossary.html#par_textimage_4" target="_blank">Census Block Groups (CBG)</a>. These models will predict the CBGs with the highest opioid fatality risk on a six-month rolling basis. This information will be distributed to <a href="https://health.ri.gov/" target="_blank">Rhode Island Department of Health (RIDOH)</a> and community organizations to deploy targeted interventions to prevent overdoses. Community organizations will have the power to choose what type of intervention, such as street outreach and educational workshops, is suitable in the local neighborhood.
           </p>
           <p>
-            The modeling effort of the New York University Center for Urban Science and Progress (NYU CUSP) capstone team is part of an NIH-funded project, deemed PROVIDENT, RIDOH, in partnership with the Task Force and researchers from Brown University and New York University (NYU).
+            The modeling effort of the <a href="https://cusp.nyu.edu/" target="_blank">New York University Center for Urban Science and Progress (NYU CUSP)</a> capstone team is part of an NIH-funded project, deemed PROVIDENT, RIDOH, in partnership with the Task Force and researchers from Brown University and New York University (NYU).
           </p>
           <p>
             As a subset of PROVIDENT, our goal is to predict opioid overdose risk in Rhode Island by CBG on a six-month rolling basis. We did a comparative analysis of ensemble, gaussian processes, and deep learning models evaluating the accuracy, interpretability, and computational effectiveness in predicting the rank of each CBG’s risk of overdoses.
@@ -179,26 +164,45 @@
           </p>
 
           <h4>
-            Acknowledgement
+            Acknowledgements
           </h4>
           <p>
             We would like to thank our project sponsors Dr. Daniel Neill (New York University), Dr. Magdalena Cerda (New York University Langone Health), and Bennett Allen (New York University Langone Health) for their guidance and collaboration on this project. We would also like to thank the following for their expertise and assistance: Dr. Brandon Marshall (Brown University), Dr. Will Goedel (Brown University), Claire Pratty (Brown University), Maxwell Krieger (Brown University), Konstantin Klemmer (University of Warwick), Abigail Cartus (Brown University), Rhode Island Department of Health, and NYU Center for Urban Science and Progress.
           </p>
         </div>
-        <!-- </transition> -->
 
       </div>
       <div class="footer text-center ">
         <hr>
-        <div class="d-flex footer-panel">
-          <div>
-            <a href="https://github.com/EmptyBox-Design/Predicting-Opioid-Overdose-in-Rhode-Island" target="_blank"><img src="https://img.icons8.com/material-rounded/36/000000/github.png"/></a>
+        <div class="d-flex flex-column footer-panel">
+          <div class="d-flex justify-content-around">
+            <div class="">
+              <a href="https://github.com/EmptyBox-Design/Predicting-Opioid-Overdose-in-Rhode-Island" target="_blank"><img src="https://img.icons8.com/material-rounded/36/000000/github.png"/></a>
+            </div>
+            <div class="landing-logo mb-4">
+              <a href="https://cusp.nyu.edu/" target="_blank">
+                <img style="height: 100%; width: auto;" :src="nyu_logo" alt="">
+              </a>
+            </div>
           </div>
-          <div class="landing-logo mb-4">
-            <a href="https://cusp.nyu.edu/" target="_blank">
-              <img style="height: 100%; width: auto;" :src="nyu_logo" alt="">
-            </a>
+          <div class="d-flex font-sm justify-content-center align-items-center">
+            Built with
+            <a target="_blank" href="https://emptybox.io"><img class="ml-1 mr-1 att-img" src="@/assets/heart_icon.png" alt /></a> and
+            <a href="https://vuejs.org/" target="_blank"><img class="ml-1 mr-1 att-img" src="@/assets/logo.png" alt /></a>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="legend-panel frosted-glass p-2">
+      <h5>Census Block Group Legend</h5>
+      <div class="legend-container d-flex font-body">
+        <div class="d-flex p-2 m-1">
+          <div class="legend-circle active-color mr-2"></div>
+          <div>Targetted</div>
+        </div>
+        <div class="d-flex p-2 m-1">
+          <div class="legend-circle mr-2"></div>
+          <div>Untargetted</div>
         </div>
       </div>
     </div>
@@ -348,34 +352,25 @@ export default {
 $black: #333;
 
 $font-sm: 0.6rem;
-$font-md: 0.95rem;
+$font-md: 0.9rem;
 $font-lg: 1rem;
 $font-xlg: 1.2rem;
 
-$legend-cirlce-size: 25px;
+$legend-cirlce-size: 15px;
 $legend-circle-active-color: #3ad3ad;
 $legend-circle-default: #fdfdfd;
-
-// ---------------------------------------------------------------- TRANSITION ----------------------------------------------------------------
-
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
-}
 
 strong {
   font-weight: 900!important;
 }
-
+.font-sm {
+  font-size: $font-sm;
+}
+.font-body  {
+  color: $black;
+  font-size: $font-md;
+  font-weight: 300;
+}
 // ---------------------------------------------------------------- MAP ----------------------------------------------------------------
 
 #Map {
@@ -400,20 +395,29 @@ strong {
   flex-direction: column;
 }
 
+.att-img {
+  height: 15px;
+  width: auto;
+}
+
 .left-ui {
   position: absolute;
   left: 0px;
   top: 0px;
 
-  width: 600px;
+  width: 40vw;
+  max-width: 50vw;
   height: 100vh;
 
   z-index: 10;
+
+  overflow-y: auto;
+  max-height: 100vh;
 }
 
 .methodology-panel {
   overflow-y: auto;
-  max-height: 50vh;
+  max-height: 35vh;
 }
 
 .frosted-glass {
@@ -421,9 +425,11 @@ strong {
   backdrop-filter: blur(6px);
   background-color: rgba(250, 250, 250, 0.35);
 }
+
 .landing-logo {
   height: 35px;
 }
+
 .footer-panel{
   justify-content: space-evenly;
 }
@@ -432,13 +438,16 @@ strong {
   border-bottom: 1px solid $black;
 }
 
-.font-body  {
-  color: $black;
-  font-size: $font-md;
-  font-weight: 300;
-}
-
 .legend-panel {
+
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+
+  width: 300px;
+  z-index: 10;
+
+  border-radius: 4px;
 
   .legend-container {
     justify-content: space-evenly;
@@ -454,7 +463,6 @@ strong {
       background: $legend-circle-active-color;
     }
 
-    // border-radius: 50%;
     align-self: center;
   }
 }
