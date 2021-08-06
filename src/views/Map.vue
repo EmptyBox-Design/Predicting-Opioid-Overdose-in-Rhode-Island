@@ -198,11 +198,11 @@
       <div class="legend-container d-flex font-body">
         <div class="d-flex p-2 m-1">
           <div class="legend-circle active-color mr-2"></div>
-          <div>Targetted</div>
+          <div>Targeted</div>
         </div>
         <div class="d-flex p-2 m-1">
           <div class="legend-circle mr-2"></div>
-          <div>Untargetted</div>
+          <div>Untargeted</div>
         </div>
       </div>
     </div>
