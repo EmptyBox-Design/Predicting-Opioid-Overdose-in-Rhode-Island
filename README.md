@@ -57,7 +57,7 @@ The [Gaussian Process (GP)](https://scikit-learn.org/stable/modules/gaussian_pro
 
 ### Gradient Boost
 
-The [Graident Boost (GB)](https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_regression.html) via the XGBoost library is highly efficient and accurate because of parallel tree boosting. The best GB model incorporates 16 principal components extracted from an original set of 143 features, using an 8-degree poly kernel. It captures 40.1% of drug overdose deaths in the period of 2020.1 (see Evaluation Criteria for detailed information).
+The [Gradient Boost (GB)](https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_regression.html) via the XGBoost library is highly efficient and accurate because of parallel tree boosting. The best GB model incorporates 16 principal components extracted from an original set of 143 features, using an 8-degree poly kernel. It captures 40.1% of drug overdose deaths in the period of 2020.1 (see Evaluation Criteria for detailed information).
 
 ### Random Forest
 
