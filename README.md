@@ -26,7 +26,7 @@ Extracting trends and understanding areas at higher risk of overdose is critical
 
 ## Solution
 
-We seek to prioritize opioid overdose outbreaks in advance using predictive modeling to allocate resources amongst the state’s [Census Block Groups](https://www.census.gov/programs-surveys/geography/about/glossary.html#par_textimage_4) (CBG). These models will predict the CBGs with the highest opioid fatality risk on a six-month rolling basis. This information will be distributed to [Rhode Island Department of Health](https://health.ri.gov/) (RIDOH) and community organizations to deploy targeted interventions to prevent overdoses. Community organizations will have the power to choose what type of intervention, such as street outreach and educational workshops, is suitable in the local neighborhood.
+We seek to predict opioid overdose outbreaks using machine learning models to allocate resources amongst the state’s [Census Block Groups](https://www.census.gov/programs-surveys/geography/about/glossary.html#par_textimage_4) (CBG). These models will predict the CBGs with the highest opioid fatality risk on a six-month rolling basis. This information will be distributed to [Rhode Island Department of Health](https://health.ri.gov/) (RIDOH) and community organizations to deploy targeted interventions to prevent overdoses. Community organizations will have the power to choose what type of intervention, such as street outreach and educational workshops, is suitable in the local neighborhood.
 
 The modeling effort of the [New York University Center for Urban Science and Progress](https://cusp.nyu.edu/) (NYU CUSP) capstone team is part of an NIH-funded project, deemed [PROVIDENT](https://preventoverdoseri.org/research/), RIDOH, in partnership with the Task Force and researchers from Brown University and New York University (NYU).
 
@@ -36,42 +36,42 @@ As a subset of PROVIDENT, our goal is to predict opioid overdose risk in Rhode I
 
 ## Evaluation Criteria
 
-For intervention distribution fairness across localities and consistent performance comparison, all models are compared using their capture rate under the *20% lightly constrained (LC 20) scenario*: 20% of the total CBGs with the highest predicted risks, at least one CBG per town.
+For intervention distribution fairness across localities and consistent performance comparison, all models are compared using their capture rate under the *20% lightly constrained scenario* (LC20): 20% of the total CBGs with the highest predicted risks, at least one CBG per town.
 
 ## Data
 
-Our main data sources include:
+Our data sources are:
 - American Community Survey
 - Emergency Medical Service overdoses-related runs
 - Prescription Drug Monitoring Program
 - Land Use
 - Public access
 
-Through literature review and expert interviews, we were able to find some of the key indicators. We further narrowed down our feature set by using Recursive Feature Elimination and Random Forest feature importances, as well as performed dimensionality reduction using Linear/Kernel Principal Component Analysis.
+Through literature review and expert interviews, we were able to narrow features to  key indicators. We further narrowed down our feature set by using recursive feature elimination and random forest feature importances, as well as performed dimensionality reduction using linear/kernel principal component analysis.
 
 ## Models
 
 ### Gaussian Process
 
-The [Gaussian Process](https://scikit-learn.org/stable/modules/gaussian_process.html) (GP) method has good prospects for spatio-temporal prediction by multiplying kernels. The best GP model uses features selected by Recursive Feature Elimination, distance-weighted spatial aggregates of those features, and each Census Block Group’s centroid coordinates, in total 140 features. It captures 40.5% drug overdose deaths in the period of 2020.1 (see Evaluation Criteria for information). 
+The [Gaussian Process (GP)](https://scikit-learn.org/stable/modules/gaussian_process.html) models have good prospects for spatio-temporal prediction by multiplying kernels. The best GP model uses features selected by recursive feature elimination, distance-weighted spatial aggregates of those features, and each CBG centroid coordinates, in total 140 features. It captures 40.5% of drug overdose deaths in the period of 2020.1 (see Evaluation Criteria for information). 
 
 ### Gradient Boost
 
-The [XGBoost](https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_regression.html) (XGB) method is highly efficient and accurate because of parallel tree boosting. The best XGB model incorporates 16 principal components extracted from an original set of 143 features, using an 8-degree poly kernel. It captures 40.1% drug overdose deaths in the period of 2020.1 (see Evaluation Criteria for detailed information). 
+The [XGBoost (GB)](https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_regression.html) via the XGBoost library is highly efficient and accurate because of parallel tree boosting. The best GB model incorporates 16 principal components extracted from an original set of 143 features, using an 8-degree poly kernel. It captures 40.1% of drug overdose deaths in the period of 2020.1 (see Evaluation Criteria for detailed information). 
 
 ### Random Forest
 
-The [Random Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) (RF) method has good accuracy and some interoperability to help characterize the model’s *logic* via feature importance's. The best RF model uses 25 top important features from the previous two periods. It on average captures 40.2% drug overdose deaths in the periods of 2019.2 and 2020.1 (see Evaluation Criteria for detailed information). 
+The [Random Forest (RF)](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) models have good accuracy and some interpretability to help characterize the model’s “logic” via feature importances. The best RF model uses 25 top important features from the previous two periods. It on average captures 40.2% of drug overdose deaths in the periods of 2019.2 and 2020.1 (see Evaluation Criteria for detailed information).
 
 ### Graph Convolutional Network
 
-The Graph Convolutional Network (GCN) method is good at capturing spatio-temporal relationships when a large amount of data and steps are available. The best GCN model uses features of the previous period, plus distance-weighted spatial aggregates of those features, in total 291 features. It captures 37.4% of drug overdose deaths in the period of 2020.1 (see Evaluation Criteria for detailed information). 
+The Graph Convolutional Network (GCN) are good at capturing spatio-temporal relationships when a large amount of data and steps are available. The best GCN model uses features of the previous period, plus distance-weighted spatial aggregates of those features, in total 291 features. It captures 37.4% of drug overdose deaths in the period of 2020.1 (see Evaluation Criteria for detailed information).  
 
 ## Results and Implications
 
-GP, XBG, and RF all show promise in predicting OOEs per CBG. Given the similar LC20 performance of GP, XGB, and RF, we are unable to recommend a single model for use in the trial. We believe given more observations, a single model may distinguish itself and we recommend the study continue to test these models with the release of more data.
+GP, GB, and RF all show promise in predicting fatal OOEs by CBG. Given the similar LC20 performance of GP, GB, and RF, we are unable to recommend a single model for use in the trial. We believe given more observations, a single model may distinguish itself and we recommend the study continue to test these models with the release of more data.
 
-The PROVIDENT team will continue the modeling effort in the next few months with a few more available periods of data to finalize the model selection by late September 2021 for the randomized control trial. This information will be distributed to RIDOH and community organizations to deploy targeted interventions to prevent overdoses. Community organizations will have the power to choose what type of intervention, such as street outreach and educational workshops, is suitable in local neighborhoods.
+The PROVIDENT team will continue modeling as more data becomes available and will finalize model selection by late September 2021 for the randomized control trial. Information from the models will be distributed to RIDOH and community organizations to deploy targeted interventions to prevent overdoses. Community organizations will have the power to choose what type of intervention, such as street outreach or educational workshops, is suitable in local neighborhoods.
 
 ## Acknowledgement
 
